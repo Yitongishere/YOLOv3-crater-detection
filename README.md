@@ -1,7 +1,6 @@
 Automated crater detection based on the YOLOv3 architecture and its application to CTX imagery -- Code
 ============================
-#### yj319@ic.ac.uk
-#### CID: 01776029
+
 
 ## Overview
 A Crater Detection Algorithm (CDA) based on YOLOv3 neural network, with support for 
@@ -9,53 +8,7 @@ retraining, evaluating on the THEMIS images, evaluating on the CTX images, detec
 craters on images input by users. The report of this software is available [here](https://github.com/acse-2019/irp-acse-yj319/tree/master/FinalReport). 
 You can also replicate the results included in the report by using this software.
 
-## Installation
-#### Clone and install requirements
-    $ git clone https://github.com/acse-2019/irp-acse-yj319
-    $ cd Code/
-    $ sudo pip3 install -r requirements.txt
-#### Download prerequisites
-Owing to the size limit of GitHub repository (100 MB), we can not upload all the files 
-in our work. As a substitute, we upload some necessary files as a zip file via Google Drive 
-and paste a link [here](https://drive.google.com/file/d/1dM7_xLsdX-mbgWNoCiUsP4JfygUpWloz/view?usp=sharing) 
-for user to download.
 
-This zip file (3.7 GB) contains our trained weights，training images, original CTX images of our
-investigation region, Robbins carter dataset (Robbins & Hynek, 2012) and also the 
-visualized detection results of our model on THEMIS test set. 
-####
-    $ ls 
-    RobbinsCraters_tab.txt	data_images		weights
-    THEMIS_results		original_CTX
-To ensure the integrity and availability of the software，users need to 
-place these files in the specified path: 
-#####
-    .
-    └── Code
-        ├── CTX
-        │   ├── original_CTX
-        │   └── RobbinsCraters_tab.txt
-        ├── Data
-        │   └──  data_images
-        └── weights
-* The structure tree only include the files you downloaded from Google Drive, guiding you to put them in the right place
-* Please keep the path of other files unchanged
-* The directory 'THEMIS_results' contains the visualized result on THEMIS test set, no need to place it anywhere
-
-As above zip file is large in size (3.7 GB), we also provide you a condensed version 
-[here](https://drive.google.com/file/d/1OnNCMPx8RnaYEi8Pu1YqwjzLo657dcCB/view?usp=sharing) (218 MB). 
-The condensed version only contains the trained weights, which allows you to play around with our CDA by detecting
-craters on images you input. Simply put the directory 'weights/' in ' Code/' is ok. However, if you do want replicate
-our results on THEMIS and CTX images or retraining the model, please download the full version.
-
-## Detecting craters on your own images
-<p align="center"><img src="./images_in_README/img1.png"\></p>
-With the weights file downloaded from Google Drive, you can use the CDA to detect the craters in images of planetary surfaces.
-
-####
-    $ python predict.py
-By running 'predict.py', the images in 'img/' will be detected automatically. We have already prepared some example images for
-you, and you can also drop your own images in 'img/' for automated crater detection. The result will be saved in 'pred_imgs/'.
 
 ## Crater detection on THEMIS images
 ####
